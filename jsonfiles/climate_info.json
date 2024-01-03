@@ -1,0 +1,27 @@
+{
+    "from": 0,
+    "size": 10000,
+    "query": {
+        "bool": {
+            "filter": [{
+                "bool": {
+                    "must": [{
+                        "range": {
+                            "log_dt": {
+                                "from": 0,
+                                "to": 1000,
+                                "include_lower": true,
+                                "include_upper": true,
+                                "boost": 1
+                            }
+                        }
+                    }],
+                    "adjust_pure_negative": true,
+                    "boost": 1
+                }
+            }],
+            "adjust_pure_negative": true,
+            "boost": 1
+        }
+    }
+}
